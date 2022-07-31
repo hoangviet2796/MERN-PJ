@@ -17,7 +17,6 @@ import { useHttp } from "../../shared/hooks/useHttp";
 
 const NewPlace = () => {
   const auth = useContext(AuthContext);
-  console.log(auth);
   const { isLoading, error, sendRequest, errorHandler } = useHttp();
   const [formState, inputHandler] = useForm(
     {

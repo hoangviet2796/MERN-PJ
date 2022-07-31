@@ -61,18 +61,21 @@ function Profile() {
   const history = useHistory();
   const updateUserHandler = async (event) => {
     event.preventDefault();
+    console.log(formState.inputs.image.value);
     const formData = new FormData();
     formData.append("name", formState.inputs.name.value);
     if (formState.inputs.image.value)
       formData.append("image", formState.inputs.image.value);
-    formData.get("image");
+    console.log(formData);
     try {
       await sendRequest(
         `${process.env.REACT_APP_BACKEND_URL}/users/${auth.userId}`,
         "PATCH",
         formData
       );
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   if (!formState.inputs.name.value) {
