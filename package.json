@@ -1,8 +1,10 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "homepage": "https://hoangviet2796.github.io/MERN-PJ/",
   "private": true,
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-google-maps": "^9.4.5",
@@ -12,6 +14,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build", 
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
